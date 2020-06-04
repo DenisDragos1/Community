@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="a5f79e86823346b29e376c5eab40b45a" Name="Diagram1" ZoomLevel="82">
+        <EntityTypeShape EntityType="CommunityModel.Answer" Width="1.5" PointX="5.25" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CommunityModel.Request" Width="1.5" PointX="3" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CommunityModel.User" Width="1.5" PointX="0.75" PointY="3.875" IsExpanded="true" />
+        <AssociationConnector Association="CommunityModel.FK__Answers__Request__3C69FB99" ManuallyRouted="false" />
+        <AssociationConnector Association="CommunityModel.FK__Answers__Service__3D5E1FD2" ManuallyRouted="false" />
+        <AssociationConnector Association="CommunityModel.FK__Requests__OwnerI__398D8EEE" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

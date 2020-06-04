@@ -1,0 +1,165 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<link rel="stylesheet" href="~/Style/css/indexhome.css" />
+<div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="6000">
+    <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner" role="listbox">
+
+
+        <div class="item active">
+            <img src="~/Style/images/1.jpg" alt="ASP.NET" class="image" />
+
+            <div class="carousel-caption" role="option">
+                @if (Session["ID"] == null)
+                {
+                    @Html.ActionLink("Vizualizare Anunturi", "Login", "Register")
+
+
+
+                    @Html.ActionLink("Adauga Anunt NOU", "Login", "Register")
+                }
+                else
+                {
+                    @Html.ActionLink("Vizualizare Anunturi", "Index", "Requests")
+
+
+
+                    @Html.ActionLink("Adauga Anunt NOU", "Create", "Requests")
+                }
+
+
+            </div>
+        </div>
+        <div class="item">
+            <img src="~/Style/images/2.jpg" alt="Visual Studio" class="img-responsive" />
+            <div class="carousel-caption" role="option">
+
+                @if (Session["ID"] == null)
+                {
+                    @Html.ActionLink("Vizualizare Anunturi", "Login", "Register")
+
+
+                    @Html.ActionLink("Adauga Anunt NOU", "Login", "Register")
+                }
+                else
+                {
+                    @Html.ActionLink("Vizualizare Anunturi", "Index", "Requests")
+
+
+
+                    @Html.ActionLink("Adauga Anunt NOU", "Create", "Requests")
+                }
+
+            </div>
+        </div>
+        <div class="item">
+            <img src="~/Style/images/3.jpg" alt="Microsoft Azure" class="img-responsive" />
+            <div class="carousel-caption" role="option">
+                @if (Session["ID"] == null)
+                {
+                    @Html.ActionLink("Vizualizare Anunturi", "Login", "Register")
+
+
+
+                    @Html.ActionLink("Adauga Anunt NOU", "Login", "Register")
+                }
+                else
+                {
+                    @Html.ActionLink("Vizualizare Anunturi", "Index", "Requests")
+
+
+
+                    @Html.ActionLink("Adauga Anunt NOU", "Create", "Requests")
+                }
+            </div>
+        </div>
+    </div>
+    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div>
+
+<style>
+
+    #myCarousel {
+        height: 100vh;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .item {
+        height: 100vh;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .image {
+        background-size: cover;
+    }
+
+    .carousel-caption {
+        margin-bottom: 10%; /*200px;*/
+    }
+
+        .carousel-caption a {
+            text-decoration: none;
+            padding: 2%; /*15*/
+            background-color: aliceblue;
+            color: black;
+            border-radius: 5px 5px 5px 5px;
+           border:1px solid black;
+            margin: 2px;
+        }
+
+            .carousel-caption a:hover {
+                border: 1px solid black;
+            }
+
+    .item active {
+        width: 100%;
+    }
+
+    .item img {
+        width: 100%;
+    }
+</style>
+@*<section id="about" class="about content-section alt-bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h2>Happy &amp; excited about Hallooou</h2>
+                <h3 class="caption gray">Customers in 100+ countries use our services</h3>
+                <p>A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am alone, and feel the charm of existence in this spot, which was created for the bliss of souls like mine. I am so happy, my dear friend, so absorbed in the exquisite sense of existence.</p>
+
+                <blockquote>
+                    There are two types of people who will tell you that you cannot make a difference in this world: those who are afraid to try and those who are afraid you will succeed.
+                    <span>Ray Goforth</span>
+                </blockquote>
+
+                <h3 class="gray light">Over the past 11 years we've worked with some amazing small businesses, non-profits, academic institutions and even Fortune 100 companies.</h3>
+
+            </div> /.col-md-6 
+
+            <div class="col-md-6">
+                 Display image 
+                 <img src="assets/images/hallooou_template-iphone_sm.png" class="img-responsive"> 
+                 Optional video embed code 
+                <div class="embed-responsive embed-responsive-16by9">
+                    <iframe src="https://player.vimeo.com/video/132613118?title=0&amp;byline=0&amp;portrait=1" class="embed-responsive-item" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                </div>
+            </div> /.col-md-6 
+        </div> /.row 
+    </div> /.container 
+</section> /.section 
+<link href=@Url.Content("/assets/css/hallooou.css") rel="stylesheet">*@

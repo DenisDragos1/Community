@@ -1,0 +1,72 @@
+﻿@model Community.Models.UserLogin
+
+@{
+    ViewBag.Title = "Login";
+}
+
+<link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+<h2>Conecteaza-te aici</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        @*<h4>UserLogin</h4>*@
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.EmailId, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.EmailId, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.EmailId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Rememberme, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <div class="checkbox">
+                    @Html.EditorFor(model => model.Rememberme)
+                    @Html.ValidationMessageFor(model => model.Rememberme, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Conectare" class="btn btn-success" />
+            </div>
+        </div>
+    </div>
+   
+}
+<br />
+
+<div>
+    <a href="@Url.Action("Index", "Register")" class="btn btn-info" style=" margin-right:10px">
+        Inregistrare aici
+        @*<span class="glyphicon glyphicon glyphicon-edit" aria-hidden="true"></span>*@
+    </a>
+    <a href="@Url.Action("ForgetPassword", "Register")" class="btn btn-danger">
+        Resetare Parola
+        @*<span class="glyphicon glyphicon glyphicon-edit" aria-hidden="true"></span>*@
+    </a>
+    @*@Html.ActionLink("Registration", "Index") 
+    @Html.ActionLink("Reset Passward", "ForgetPassword")*@
+</div>
+
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>

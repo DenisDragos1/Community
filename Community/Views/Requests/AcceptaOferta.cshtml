@@ -1,0 +1,142 @@
+﻿@model Community.Data.Request
+
+@{
+    ViewBag.Title = "AcceptaOferta";
+}
+
+<link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+<h3>Esti sigur ca vrei sa accepti aceasta oferta?</h3>
+<hr />
+@*<div>
+    <h4>Request</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Titlu)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Titlu)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Imagine)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Imagine)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Descriere)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Descriere)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OwnerId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OwnerId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Data)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Data)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Solved)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Solved)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Greutate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Greutate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AdresaExpeditor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AdresaExpeditor)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AdresaDestinatar)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AdresaDestinatar)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CategorieProdus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CategorieProdus)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Judet)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Judet)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Oras)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Oras)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Phone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Phone)
+        </dd>
+
+    </dl>*@
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-actions no-color">
+        <input type="submit" value="Da" class="btn btn-success" />
+        <a href="@Url.Action("Index", "Requests")" class="btn btn-danger">
+            Nu
+            <span class="glyphicon glyphicon glyphicon-remove-sign" aria-hidden="true"></span>
+        </a>
+
+    </div>
+}
+</div>

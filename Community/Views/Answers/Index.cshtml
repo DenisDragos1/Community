@@ -1,0 +1,83 @@
+﻿@model IEnumerable<Community.Data.Answer>
+
+@{
+    ViewBag.Title = "Index";
+}
+<link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+<h2>Oferte </h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Pret)
+        </th>
+        @*<th>
+            @Html.DisplayNameFor(model => model.Negociabil)
+        </th>*@
+        <th>
+            @Html.DisplayNameFor(model => model.Phone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Message)
+        </th>
+        @*<th>
+            @Html.DisplayNameFor(model => model.Gasit)
+        </th>*@
+        <th>
+            @Html.DisplayNameFor(model => model.Request.Titlu)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.User.FirstName)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        //using (Html.BeginForm("Index", "Answers", FormMethod.Post))
+        //{
+        //    if ( item.Request.OwnerId != (int)Session["ID"])
+        //    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Pret)
+            </td>
+            @*<td>
+                @Html.DisplayFor(modelItem => item.Negociabil)
+            </td>*@
+            <td>
+                @Html.DisplayFor(modelItem => item.Phone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Message)
+            </td>
+            @*<td>
+                @Html.DisplayFor(modelItem => item.Gasit)
+            </td>*@
+            <td>
+                @Html.DisplayFor(modelItem => item.Request.Titlu)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.User.FirstName)
+            </td>
+            
+            <td>
+                @*@Html.ActionLink("Details", "Details", new { id = item.ID })*@
+                @*@Url.Action("AcceptaOferta", "Answers", new { id = item.ID  })*@
+                <a href="@Url.Action("AcceptaOferta", "Requests", new { id = item.RequestId  })" class="btn btn-success">
+                    Accepta Oferta
+                    <span class="glyphicon glyphicon glyphicon glyphicon-ok" aria-hidden="true"></span>
+                </a>
+                @*@Html.ActionLink("Delete", "Delete", new { id = item.ID })*@
+                <a href="@Url.Action("Delete", "Answers", new { id = item.ID })" class="btn btn-danger">
+                    Sterge
+                    <span class="glyphicon glyphicon glyphicon-remove-sign" aria-hidden="true"></span>
+                </a>
+            </td>
+        </tr>
+        //    }
+        //}
+    }
+
+</table>

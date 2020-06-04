@@ -1,0 +1,77 @@
+﻿@model Community.Data.Answer
+
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Answer</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.RequestId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RequestId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ServiceId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ServiceId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Pret)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Pret)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Negociabil)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Negociabil)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Phone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Phone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Message)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Message)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Gasit)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Gasit)
+        </dd>
+
+    </dl>
+</div>
+
+    @Html.ActionLink("Back to List", "Index")
+
+<a href="~/Answers/?reqId=@Model.Request.ID" class="btn btn-success">Index</a>
+
+@*<a href="@Url.Action("?reqId=@Model.Request.ID", "Answers", new { id = Model.Request.ID  })" class="btn btn-success">Index</a>*@

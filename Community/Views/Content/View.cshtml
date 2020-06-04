@@ -1,0 +1,111 @@
+﻿@model IEnumerable<Community.ViewModel.ContentViewModel>
+
+@{
+    ViewBag.Title = "View";
+}
+
+<h2>View</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Contents)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OwnerId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Data)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Solved)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Greutate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AdresaExpeditor)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AdresaDestinatar)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CategorieProdus)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Judet)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Oras)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Phone)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Contents)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OwnerId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Data)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Solved)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Greutate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AdresaExpeditor)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AdresaDestinatar)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CategorieProdus)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Judet)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Oras)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Phone)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>

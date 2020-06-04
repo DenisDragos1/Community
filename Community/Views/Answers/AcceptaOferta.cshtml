@@ -1,0 +1,92 @@
+﻿@model Community.Data.Request
+
+@{
+    ViewBag.Title = "AcceptaOferta";
+}
+<link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+<h2>AcceptaOferta</h2>
+
+<h3>Esti sigur ca vrei sa accepti aceasta oferta ?</h3>
+@*<div>
+
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.RequestId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RequestId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ServiceId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ServiceId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Pret)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Pret)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Negociabil)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Negociabil)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Phone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Phone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Message)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Message)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Gasit)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Gasit)
+        </dd>
+
+    </dl>*@
+<div class="form-group">
+    @Html.LabelFor(model => model.Solved, htmlAttributes: new { @class = "control-label col-md-2" })
+    <div class="col-md-10">
+        <div class="checkbox">
+            @Html.EditorFor(model => model.Solved)
+            @Html.ValidationMessageFor(model => model.Solved, "", new { @class = "text-danger" })
+        </div>
+    </div>
+</div>
+
+@using (Html.BeginForm("AcceptaOferta", "Requests", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+  
+
+    <div class="form-actions no-color">
+        <input type="submit" value="AcceptaOferta" class="btn btn-success" />
+
+    </div>
+}
+</div>

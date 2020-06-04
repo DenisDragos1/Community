@@ -1,0 +1,147 @@
+﻿@model Community.Data.Request
+
+
+@{
+    ViewBag.Title = "Details";
+}
+<link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+
+@*<style>
+    .user{
+        float:right;
+        width:100px;
+        height:200px;
+        color:black;
+    }
+    .content{
+        max-width:1000px;
+    }
+</style>*@
+<div class="content">
+    
+    <dl class="dl-horizontal">
+       
+
+        <dd>
+           <h2>@Html.DisplayFor(model => model.Titlu)</h2>
+        </dd>
+
+       
+
+
+        <dd>
+            @*@Html.DisplayFor(item => item.Imagine)*@
+
+
+            @*<img src="~/images/  @Html.DisplayFor(item => item.Imagine)" width="216" height="152" />*@
+           <img src='@Url.Action("images","DataImages", new { id = Model.Imagine })' width="594" height="445" />
+            
+        </dd>
+
+
+       
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Descriere)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Descriere)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Data)
+        </dt>
+
+        <dd class="user">
+            @Html.DisplayFor(model => model.Data)
+        </dd>
+
+        
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Greutate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Greutate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AdresaExpeditor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AdresaExpeditor)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AdresaDestinatar)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AdresaDestinatar)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CategorieProdus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CategorieProdus)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Judet)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Judet)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Oras)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Oras)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Phone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Phone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.User.FirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.User.FirstName)
+        </dd>
+
+    </dl>
+    <div class="user"></div>
+</div>
+<p>
+    @*@Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |*@
+    @*<a href="  @Html.ActionLink("Index", "Requests") class="btn btn-group">
+        Vezi alte anunturi
+    </a>*@
+    <a href="@Url.Action("Index", "Requests")" class="btn btn-info">
+        Vezi alte anunturi
+        @*<span class="glyphicon glyphicon glyphicon-edit" aria-hidden="true"></span>*@
+    </a>
+</p>

@@ -1,0 +1,219 @@
+﻿@model IEnumerable<Community.Data.Request>
+
+@{
+    ViewBag.Title = "Index";
+}
+<link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+
+<h2>Anunturi</h2>
+
+<div class="dropdown">
+
+    @Html.ActionLink("Adauga Anunt Nou", "Create")
+
+    @Html.ActionLink("Anunturile Mele", "Index", new { searching = "", myRequestsOnly = true })
+    @Html.ActionLink("Toate Anunturile", "Index")
+
+
+</div>
+
+
+<br />
+<div class="search-box" style=" margin-bottom:10px">
+    @using (Html.BeginForm("Index", "Requests", FormMethod.Get))
+    {
+        @Html.TextBox("searching")<input type="submit" value="Search" />
+    }
+</div>
+<style>
+    /*body {
+        margin-left: 20%;
+        margin-right: 20%;
+    }*/
+
+    .table tr:hover {
+        /*// background-color:lightgrey;*/
+        cursor: pointer;
+    }
+
+    .dropdown {
+        background-color: #333333;
+        border-radius: 5px;
+        height: 30px;
+    }
+
+        .dropdown a {
+            color: #9d9d9d;
+            padding-left: 30px;
+            padding-top: 20px;
+            font-size: 20px;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            margin-top: 10px;
+            text-decoration: none;
+        }
+
+            .dropdown a:hover {
+                color: blueviolet;
+                font-size: 21px;
+            }
+
+    /*#searching {
+        margin-left: 20%;
+        border-radius: 5px;
+    }*/
+</style>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Titlu)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Imagine)
+        </th>
+
+        @*<th>
+            @Html.DisplayNameFor(model => model.Imagine1)
+        </th>*@
+        <th>
+            @Html.DisplayNameFor(model => model.Descriere)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Data)
+        </th>
+        @*<th>
+                @Html.DisplayNameFor(model => model.Solved)
+            </th>*@
+        <th>
+            @Html.DisplayNameFor(model => model.Greutate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AdresaExpeditor)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AdresaDestinatar)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CategorieProdus)
+        </th>
+        @*<th>
+            @Html.DisplayNameFor(model => model.Judet)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Oras)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>*@
+        <th>
+            @Html.DisplayNameFor(model => model.Phone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.User.FirstName)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        if (item.Solved == false)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Titlu)
+            </td>
+           
+                <td>
+                    @*@Html.DisplayFor(modelItem => item.Imagine)*@
+                    <img src="~/DataImages/images/@item.Imagine" width="216" height="152" />
+
+                </td>
+            
+            @*<td>
+                @Html.DisplayFor(modelItem => item.Imagine1)
+                <img src="/Content/RetrieveImage/@item.ID" alt="" height="152" width="216" />
+            </td>*@
+            <td>
+                @Html.DisplayFor(modelItem => item.Descriere)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Data)
+            </td>
+            @*<td>
+                    @Html.DisplayFor(modelItem => item.Solved)
+                </td>*@
+            <td>
+                @Html.DisplayFor(modelItem => item.Greutate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AdresaExpeditor)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AdresaDestinatar)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CategorieProdus)
+            </td>
+            @*<td>
+                @Html.DisplayFor(modelItem => item.Judet)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Oras)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>*@
+            <td>
+                @Html.DisplayFor(modelItem => item.Phone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.User.FirstName)
+            </td>
+            <td>
+                @using (Html.BeginForm("Index", "Requests", FormMethod.Post))
+
+                {
+
+                    if (item.User.ID == (int)Session["ID"] /*&& (int)Session["ID"]!=null*/)
+                    {
+                        <a href="@Url.Action("Edit", "Requests", new { id = item.ID })" class="btn btn-info">
+                            Editeaza
+                            <span class="glyphicon glyphicon glyphicon-edit" aria-hidden="true"></span>
+                        </a>
+                        <a href="@Url.Action("Delete", "Requests", new { id = item.ID })" class="btn btn-danger">
+                            Sterge
+                            <span class="glyphicon glyphicon glyphicon-remove-sign" aria-hidden="true"></span>
+                        </a>
+                        <a href="@Url.Action("Details", "Requests", new { id = item.ID })" class="btn btn-success">
+                            Vezi anuntul
+                            <span class="glyphicon glyphicon glyphicon-list" aria-hidden="true"></span>
+                        </a>
+
+                        <a href="@Url.Action("Index", "Answers", new { reqId = item.ID })" class="btn btn-primary">
+                            Oferte
+                            <span class="glyphicon glyphicon glyphicon-book" aria-hidden="true"></span>
+                        </a>
+                    }
+                    else
+                    {
+                        <a href="@Url.Action("Details", "Requests", new { id = item.ID })" class="btn btn-success">
+                            Vezi anuntul
+                            <span class="glyphicon glyphicon glyphicon-list" aria-hidden="true"></span>
+                        </a>
+
+                        <a href="@Url.Action("AnswerRequest", "Requests", new { requestId = item.ID })" class="btn btn-primary">
+                            Trimite o oferta
+                            <span class="glyphicon glyphicon glyphicon-check" aria-hidden="true"></span>
+                        </a>
+                    }
+                  
+
+                }
+
+
+            </td>
+        </tr>
+            }
+        }
+
+</table>
