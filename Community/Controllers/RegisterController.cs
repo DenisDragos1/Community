@@ -258,7 +258,7 @@ namespace Community.Controllers
             var link = Request.Url.AbsoluteUri.Replace(Request.Url.PathAndQuery, GenerateUserVerificationLink);
 
             //var fromMail = new MailAddress("community123401@gmail.com", "Denis Dragos");
-            //var fromEmailpassword = "RaAEp9ZU7HfgJ@K";
+            //var fromEmailpassword = "*********";
             //var toEmail = new MailAddress(emailId);
 
 
